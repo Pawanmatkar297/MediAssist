@@ -88,8 +88,8 @@ ehthumbs.db
 Thumbs.db
 
 # Project specific
-*.csv
-*.json
+!backend/chatbot/*.csv
+!backend/chatbot/*.json
 !package.json
 !package-lock.json
 *.model
