@@ -2,19 +2,19 @@ services:
   - type: web
     name: healthcare-chatbot-backend
     env: python
-    buildCommand: cd backend && pip install -r requirements.txt
-    startCommand: cd backend && python -m gunicorn --bind 0.0.0.0:$PORT app:app
+    buildCommand: cd Health-Care-Chat-Bot/backend && pip install -r requirements.txt
+    startCommand: cd Health-Care-Chat-Bot/backend && python -m gunicorn --bind 0.0.0.0:$PORT app:app
     envVars:
       - key: PYTHON_VERSION
-        value: 3.9.0
+        value: 3.11.6
       - key: PYTHONPATH
-        value: backend
+        value: Health-Care-Chat-Bot/backend
 
   - type: web
     name: healthcare-chatbot-frontend
     env: static
-    buildCommand: cd healthcare-chatbot-frontend && npm install && npm run build
-    staticPublishPath: healthcare-chatbot-frontend/build
+    buildCommand: cd Health-Care-Chat-Bot/healthcare-chatbot-frontend && npm install && npm run build
+    staticPublishPath: Health-Care-Chat-Bot/healthcare-chatbot-frontend/build
     routes:
       - type: rewrite
         source: /*
